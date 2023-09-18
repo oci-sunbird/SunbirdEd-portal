@@ -95,6 +95,8 @@ then
 cd app_dist
 # perform one more yarn check file to make sure we have all the dependency
 echo "verify package depnedency"
+# no yarnlock by default, this will break the build because of version compatibility
+cp ../yarn.lock .
 yarn install --check-files
 echo "finish yarn check files"
 # don't do build hash as it will breaks the compare-version dependency
